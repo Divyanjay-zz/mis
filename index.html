@@ -47,7 +47,7 @@
   function showValues() {
     var startdate= $( "#startdate" ).val();
     var enddate= $( "#enddate" ).val();
-    $( "#results" ).html( '<li>'+startdate+'</li><li>'+enddate+'</li>' );
+    $( "#results" ).html( '<dt>'+startdate+'</dt><dt>'+enddate+'</dt>' );
   }
   $( "input[type='date']" ).on( "change", showValues );
   showValues();
