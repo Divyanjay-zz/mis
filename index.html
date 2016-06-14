@@ -2,14 +2,56 @@
 
 <iframe width="302" height="450" seamless frameborder="0" scrolling="NO" src="https://docs.google.com/spreadsheets/d/1kpveq3Y19lNVim6_NT4udnesXUKh4rGCzIzHbQZpfUQ/pubchart?oid=1384368398&amp;format=interactive"></iframe>
 	
-</iframe>
-<form>
-  First name:<br>
-  <input type="text" name="firstname"><br>
-  Last name:<br>
-  <input type="text" name="lastname">
-</form>
-
-
 
 <iframe width="302" height="450" seamless frameborder="0" scrolling="NO" src="https://docs.google.com/spreadsheets/d/1kpveq3Y19lNVim6_NT4udnesXUKh4rGCzIzHbQZpfUQ/pubchart?oid=1384368398&amp;format=interactive"></iframe>
+
+
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>serialize demo</title>
+  <style>
+  body, select {
+    font-size: 12px;
+  }
+  form {
+    margin: 5px;
+  }
+  p {
+    color: red;
+    margin: 5px;
+    font-size: 14px;
+  }
+  b {
+    color: blue;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+
+<form>
+  First name:
+  <input type="text" name="startdate"><br>
+  Last name:
+  <input type="text" name="enddate">
+</form>
+
+ 
+<p><tt id="results"></tt></p>
+ 
+<script>
+  function showValues() {
+    var str = $( "form" ).serialize();
+    $( "#results" ).text( str );
+  }
+  $( "input[type='text']" ).on( "change", showValues );
+  showValues();
+</script>
+
+
+
+</body>
+</html>
