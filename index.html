@@ -1,7 +1,7 @@
 
 
 <iframe width="302" height="450" seamless frameborder="0" scrolling="NO" src="https://docs.google.com/spreadsheets/d/1kpveq3Y19lNVim6_NT4udnesXUKh4rGCzIzHbQZpfUQ/pubchart?oid=1384368398&amp;format=interactive"></iframe>
-	
+ 
 
 <iframe width="302" height="450" seamless frameborder="0" scrolling="NO" src="https://docs.google.com/spreadsheets/d/1kpveq3Y19lNVim6_NT4udnesXUKh4rGCzIzHbQZpfUQ/pubchart?oid=1384368398&amp;format=interactive"></iframe>
 
@@ -34,20 +34,22 @@
 
 <form>
   First name:
-  <input type="text" name="startdate"><br>
+  <input type="date" name="startdate" id="startdate"><br>
   Last name:
-  <input type="text" name="enddate">
+  <input type="date" name="enddate" id="enddate">
 </form>
+<ul id="results">
+</ul>
 
  
-<p><tt id="results"></tt></p>
  
 <script>
   function showValues() {
-    var str = $( "form" ).serialize();
-    $( "#results" ).text( str );
+    var startdate= $( "#startdate" ).val();
+    var enddate= $( "#enddate" ).val();
+    $( "#results" ).html( '<li>'+startdate+'</li><li>'+enddate+'</li>' );
   }
-  $( "input[type='text']" ).on( "change", showValues );
+  $( "input[type='date']" ).on( "change", showValues );
   showValues();
 </script>
 
