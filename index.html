@@ -30,28 +30,35 @@
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
- 
-
-<form>
+ <form>
   First name:
   <input type="date" name="startdate" id="startdate"><br>
   Last name:
   <input type="date" name="enddate" id="enddate">
 </form>
-<ul id="results">
+
+<ul>
+
+<li id="liStartDate">2016-06-01</li>
+<li id="liEndDate">2016-06-15</li>
+
 </ul>
 
- 
- 
-<script>
-  function showValues() {
+ <script>
+
+
+  $( "input[type='date']" ).on( "change",  function () {
     var startdate= $( "#startdate" ).val();
     var enddate= $( "#enddate" ).val();
-    $( "#results" ).html( '<dt>'+startdate+'</dt><dt>'+enddate+'</dt>' );
+    $( "#liStartDate" ).html(startdate);
+    $( "#liEndDate" ).html(enddate);
   }
-  $( "input[type='date']" ).on( "change", showValues );
-  showValues();
+ );
+
 </script>
+
+ 
+
 
 
 
